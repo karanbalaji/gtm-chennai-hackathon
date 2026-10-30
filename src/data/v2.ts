@@ -1,0 +1,144 @@
+export type Track = {
+  id: string;
+  num: string;
+  title: string;
+  tagline: string;
+  problem: string;
+  builds: string[];
+  sponsorProvides: string[];
+};
+
+export const tracks: Track[] = [
+  {
+    id: "enterprise-deal",
+    num: "01",
+    title: "Win the Enterprise Deal",
+    tagline: "Long cycles, many stakeholders, one decision.",
+    problem:
+      "Enterprise deals stall because buying involves commercial, technical, and risk stakeholders who all need different proof. Teams in this track build tools that keep a complex deal moving: who needs what, what is blocked, and what proof closes it.",
+    builds: [
+      "A deal room that tracks every stakeholder, objection, and next step",
+      "A stakeholder map that shows who influences the decision and what they care about",
+      "An RFP and complex-requirements response assistant that drafts from real product docs",
+    ],
+    sponsorProvides: [
+      "One real enterprise-deal problem, anonymized where needed",
+      "Sample deal documents or a realistic scenario",
+      "A mentor from the sponsor team on both days",
+    ],
+  },
+  {
+    id: "ai-sells",
+    num: "02",
+    title: "AI That Actually Sells",
+    tagline: "AI in the revenue process, with humans in charge.",
+    problem:
+      "Every team is told to add AI to selling, but few tools earn a rep's trust. This track is for AI that saves real selling time: prospecting, forecasting, call insight, and RevOps work, with clear human oversight and no black-box promises.",
+    builds: [
+      "A prospecting assistant that explains why an account is worth pursuing",
+      "A forecast helper that shows its reasoning, not just a number",
+      "A call and meeting summarizer that turns conversation into next steps",
+    ],
+    sponsorProvides: [
+      "One real revenue-process problem where AI is stuck or untrusted",
+      "Sample or anonymized pipeline, call, or CRM-style data",
+      "A mentor from the sponsor team on both days",
+    ],
+  },
+  {
+    id: "know-buyer",
+    num: "03",
+    title: "Know Your Buyer",
+    tagline: "Positioning that comes from evidence, not slogans.",
+    problem:
+      "Most positioning is generic because buyer understanding is thin. This track builds tools that turn buyer research into sharper positioning: what buyers actually need, how they decide, and what message lands with each role.",
+    builds: [
+      "A buyer research digest that turns interviews and notes into usable insight",
+      "A positioning tester that scores a message against a buyer persona",
+      "A discovery assistant that prepares sharp questions before a first call",
+    ],
+    sponsorProvides: [
+      "One real buyer-understanding or positioning problem",
+      "Sample buyer interviews, personas, or messaging to work from",
+      "A mentor from the sponsor team on both days",
+    ],
+  },
+  {
+    id: "revenue-engine",
+    num: "04",
+    title: "Run the Revenue Engine",
+    tagline: "Pipeline health, handoffs, retention, expansion.",
+    problem:
+      "Revenue breaks at the handoffs: marketing to sales, sales to pre-sales, sales to customer success. This track builds the connective tissue: pipeline visibility, clean handoffs, and tools that grow existing accounts instead of only chasing new ones.",
+    builds: [
+      "A pipeline health board that flags deals at risk before they slip",
+      "A handoff pack generator for sales to pre-sales to customer success",
+      "An expansion finder that spots upsell and retention signals in an account",
+    ],
+    sponsorProvides: [
+      "One real pipeline, handoff, or expansion problem",
+      "Sample or anonymized pipeline and account data",
+      "A mentor from the sponsor team on both days",
+    ],
+  },
+];
+
+export const schedule = [
+  {
+    day: "Saturday",
+    note: "Kickoff and first build sprint",
+    items: [
+      { time: "2:00 PM", what: "Doors open, check-in, team formation" },
+      { time: "2:30 PM", what: "Kickoff: how the weekend works, then each sponsor pitches its problem live" },
+      { time: "3:30 PM", what: "Teams pick a track and start building" },
+      { time: "4:00 PM", what: "Build sprint 1, with sponsor mentors circulating" },
+      { time: "6:00 PM", what: "Day one closes on site. Teams may keep building remotely overnight." },
+    ],
+  },
+  {
+    day: "Sunday",
+    note: "Build day and demo day",
+    items: [
+      { time: "10:00 AM", what: "Build resumes, mentor check-ins" },
+      { time: "1:00 PM", what: "Midday mentor round: is this solving the sponsor's problem?" },
+      { time: "3:00 PM", what: "Build freeze. Demos and pitches prepared." },
+      { time: "3:30 PM", what: "Live demos and judging, track by track" },
+      { time: "5:30 PM", what: "Winners announced, closing, and next steps for promising builds" },
+      { time: "6:00 PM", what: "Weekend ends" },
+    ],
+  },
+];
+
+export const judging = [
+  { weight: "30%", title: "Solves the sponsor's problem", detail: "Does it answer the actual problem the company brought, not a nearby easier one?" },
+  { weight: "30%", title: "Working demo", detail: "Something real that runs live. Slides alone do not count." },
+  { weight: "25%", title: "GTM insight", detail: "Does the team understand the buyer, the sales motion, and why this would work in a real team?" },
+  { weight: "15%", title: "Pitch and experience", detail: "Can a stranger follow it in a few minutes, and is it pleasant to use?" },
+];
+
+export const faqs = [
+  {
+    q: "Is this the same as Hack for Humanity?",
+    a: "No. This is the sponsor-led GTM edition, run as a GTM Labs build weekend. The civic edition of Hack for Humanity keeps its own site and repo, and will return when the civic edition runs.",
+  },
+  {
+    q: "Do I need to bring a company problem?",
+    a: "No. Companies bring the problems. You pick one of the four tracks, join a team, and build on the problem its sponsor presents on Saturday.",
+  },
+  {
+    q: "Which companies are sponsoring a track?",
+    a: "To be confirmed. Each track will name its sponsor company and its exact problem statement once confirmed. Until then, the track descriptions above are the problem areas.",
+  },
+  {
+    q: "What do teams deliver?",
+    a: "A working demo and a short live pitch on Sunday afternoon. Tell the judges what problem you solved, who it is for, and what you would build next with the sponsor.",
+  },
+  {
+    q: "Who can join?",
+    a: "Builders, sellers, marketers, RevOps and customer success folks, students, and anyone who wants to learn go-to-market by building. Teams of 1 to 4. Mixed teams of builders and GTM people tend to do best here.",
+  },
+  {
+    q: "What happens to good builds after the weekend?",
+    a: "With the sponsor's and the team's permission, promising builds can continue as GTM Labs projects, and the lessons can be written up as case studies for the Club.",
+  },
+];
