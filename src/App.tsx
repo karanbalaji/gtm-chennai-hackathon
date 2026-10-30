@@ -160,9 +160,46 @@ export default function App() {
               It is open source and deployable into a Cloudflare account, so ask a mentor on Saturday if you want help
               getting a workspace running.
             </p>
-            <a className="mt-3 inline-block text-sm font-medium text-primary underline" href="https://blog.cloudflare.com/cloudflare-os/" target="_blank" rel="noreferrer">
-              Read the Cloudflare OS announcement →
-            </a>
+            <h4 className="mt-4 font-semibold">How to set it up</h4>
+            <ol className="mt-2 space-y-3 text-sm leading-relaxed text-zinc-700">
+              <li>
+                <strong>1. Easiest: deploy it to your own Cloudflare account.</strong> Cloudflare built an online flow
+                for this: open{" "}
+                <a className="font-medium text-primary underline" href="https://os.cloudflare.app/deploy" target="_blank" rel="noreferrer">
+                  os.cloudflare.app/deploy
+                </a>{" "}
+                and follow it. It deploys Cloudflare OS into your account, it does not run on someone else's hosted copy.
+              </li>
+              <li>
+                <strong>2. Try it on your laptop first.</strong> Install pnpm, clone the repo, run it locally, then open
+                it in your browser:
+                <pre className="mt-2 overflow-x-auto rounded-lg bg-zinc-950 p-3 text-xs leading-relaxed text-zinc-100">{`git clone https://github.com/cloudflare/cloudflare-os.git
+cd cloudflare-os
+pnpm run-local`}</pre>
+                <span className="text-zinc-600">Then visit http://localhost:8787. The README notes this runs the whole stack locally on wrangler and workerd, is not meant for production use, and stores your data in a .wrangler folder.</span>
+              </li>
+              <li>
+                <strong>3. Custom setup (optional).</strong> If you want your own gatekeepers or code changes, use the
+                deployment starter repo:{" "}
+                <a className="font-medium text-primary underline" href="https://github.com/cloudflare/cloudflare-os-starter" target="_blank" rel="noreferrer">
+                  github.com/cloudflare/cloudflare-os-starter
+                </a>
+                . Connecting external services like GitHub or Google needs each service's own OAuth setup, covered in that gatekeeper package's instructions.
+              </li>
+            </ol>
+            <p className="mt-3 text-sm text-zinc-600">
+              Honest note: the README calls this an early-access release in heavy development with rough edges, and
+              deploying it on your own server with workerd is still marked coming soon. For the hackathon weekend, the
+              deploy flow or the local run is the practical route.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-4">
+              <a className="text-sm font-medium text-primary underline" href="https://github.com/cloudflare/cloudflare-os" target="_blank" rel="noreferrer">
+                Cloudflare OS on GitHub →
+              </a>
+              <a className="text-sm font-medium text-primary underline" href="https://blog.cloudflare.com/cloudflare-os/" target="_blank" rel="noreferrer">
+                Read the announcement →
+              </a>
+            </div>
           </div>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
