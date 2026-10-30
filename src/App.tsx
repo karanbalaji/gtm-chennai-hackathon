@@ -146,7 +146,26 @@ export default function App() {
           title="You can build this by prompting. No coding experience required."
           intro="This stack is promptable: describe what you want in plain words to a coding agent and it scaffolds the code for you. You still need to test it and demo it, and mentors are in the room to help. If you can describe the problem clearly, you can participate."
         >
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="rounded-xl border-2 border-orange-600 bg-orange-50 p-5">
+            <p className="text-xs font-bold uppercase tracking-wider text-orange-800">Even easier: start in your browser</p>
+            <h3 className="mt-2 text-xl font-bold">Cloudflare OS</h3>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-700">
+              Cloudflare OS is an open platform for agents, apps, and work that Cloudflare has open sourced. You use it
+              in your browser, so you do not have to be a developer or know how to use a terminal: start a conversation,
+              give your workspace a goal, and its agent can research, build docs and spreadsheets, or build a small
+              connected app, with an isolated runtime where it writes and runs code. That is a genuine way to demo on
+              Sunday, and you can graduate to React + Vite and the Agents SDK if you want a full custom app.
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-700">
+              It is open source and deployable into a Cloudflare account, so ask a mentor on Saturday if you want help
+              getting a workspace running.
+            </p>
+            <a className="mt-3 inline-block text-sm font-medium text-primary underline" href="https://blog.cloudflare.com/cloudflare-os/" target="_blank" rel="noreferrer">
+              Read the Cloudflare OS announcement →
+            </a>
+          </div>
+
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
             {stackCards.map((s) => (
               <Card key={s.title} className="flex flex-col">
                 <CardHeader>
