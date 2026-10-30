@@ -144,26 +144,59 @@ export default function App() {
           id="tech-stack"
           eyebrow="Tech stack"
           title="You can build this by prompting. No coding experience required."
-          intro="This stack is promptable: describe what you want in plain words to a coding agent and it scaffolds the code for you. You still need to test it and demo it, and mentors are in the room to help. If you can describe the problem clearly, you can participate."
+          intro="This stack is promptable: describe what you want in plain words to a coding agent and it scaffolds the code for you. You still need to test it and demo it, and mentors are in the room to help. If you are new, start with FreeBuff below. If you can describe the problem clearly, you can participate."
         >
           <div className="rounded-xl border-2 border-orange-600 bg-orange-50 p-5">
-            <p className="text-xs font-bold uppercase tracking-wider text-orange-800">Even easier: start in your browser</p>
+            <p className="text-xs font-bold uppercase tracking-wider text-orange-800">Easiest way to start, especially if you are new</p>
+            <h3 className="mt-2 text-xl font-bold">Start with FreeBuff</h3>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-700">
+              FreeBuff is a free coding agent, funded by ads, so there is no subscription or card to worry about. You
+              describe what you want in plain words and it builds it for you. This is the path we recommend for
+              beginners.
+            </p>
+            <ol className="mt-4 space-y-3 text-sm leading-relaxed text-zinc-700">
+              <li>
+                <strong>1. Download the FreeBuff desktop app.</strong> Open the referral link below, download the app
+                for your computer (Mac, Windows, or Linux), install it, and open it.
+              </li>
+              <li>
+                <strong>2. Create a free Cloudflare account</strong> if you do not already have one. You will need it
+                for the agent and hosting parts of your demo.
+              </li>
+              <li>
+                <strong>3. Inside FreeBuff, paste this prompt:</strong>
+                <pre className="mt-2 overflow-x-auto whitespace-pre-wrap rounded-lg bg-zinc-950 p-3 text-xs leading-relaxed text-zinc-100">{`Install the Cloudflare CLI (wrangler) and help me log in to my Cloudflare account.`}</pre>
+                <span className="text-zinc-600">FreeBuff will run the login step and your browser will ask you to authorize it. That is normal: it is how the Cloudflare CLI connects to your account. Once it says you are logged in, you are set.</span>
+              </li>
+              <li>
+                <strong>4. Then describe your build.</strong> Paste your track's sponsor problem and the starter prompt
+                further down this page, and tell FreeBuff to build it with React + Vite and the Cloudflare Agents SDK.
+                Test it, fix what breaks with FreeBuff's help, and demo it live on Sunday.
+              </li>
+            </ol>
+            <p className="mt-3 text-sm text-zinc-600">
+              Prefer the terminal? FreeBuff also runs there: install it, then run it in your project folder. The desktop
+              app above is the simplest route if you are new.
+            </p>
+            <Button className="mt-4 bg-orange-600 hover:bg-orange-700" asChild>
+              <a href="https://freebuff.com/?ref=ref-9b801c68-ca4d-46d9-9ba7-e24d57883d64" target="_blank" rel="noreferrer">
+                Download FreeBuff →
+              </a>
+            </Button>
+          </div>
+
+          <div className="mt-8 rounded-xl border bg-zinc-50 p-5">
+            <p className="text-xs font-bold uppercase tracking-wider text-zinc-500">Optional, for advanced teams only</p>
             <h3 className="mt-2 text-xl font-bold">Cloudflare OS</h3>
             <p className="mt-2 text-sm leading-relaxed text-zinc-700">
-              Cloudflare OS is an open platform for agents, apps, and work that Cloudflare has open sourced. You use it
-              in your browser, so you do not have to be a developer or know how to use a terminal: start a conversation,
-              give your workspace a goal, and its agent can research, build docs and spreadsheets, or build a small
-              connected app, with an isolated runtime where it writes and runs code. That is a genuine way to demo on
-              Sunday, and you can graduate to React + Vite and the Agents SDK if you want a full custom app.
+              We do not recommend this for beginners. Setting it up means deploying it to your own Cloudflare account
+              or running it locally, which is more involved than FreeBuff. If you are experienced and curious, it is an
+              open platform for agents, apps, and work that you use in your browser, and its agent can research, build
+              docs and spreadsheets, or build a small connected app. Here are the setup steps from its GitHub README:
             </p>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-700">
-              It is open source and deployable into a Cloudflare account, so ask a mentor on Saturday if you want help
-              getting a workspace running.
-            </p>
-            <h4 className="mt-4 font-semibold">How to set it up</h4>
-            <ol className="mt-2 space-y-3 text-sm leading-relaxed text-zinc-700">
+            <ol className="mt-4 space-y-3 text-sm leading-relaxed text-zinc-700">
               <li>
-                <strong>1. Easiest: deploy it to your own Cloudflare account.</strong> Cloudflare built an online flow
+                <strong>1. Deploy it to your own Cloudflare account.</strong> Cloudflare built an online flow
                 for this: open{" "}
                 <a className="font-medium text-primary underline" href="https://os.cloudflare.app/deploy" target="_blank" rel="noreferrer">
                   os.cloudflare.app/deploy
@@ -189,8 +222,7 @@ pnpm run-local`}</pre>
             </ol>
             <p className="mt-3 text-sm text-zinc-600">
               Honest note: the README calls this an early-access release in heavy development with rough edges, and
-              deploying it on your own server with workerd is still marked coming soon. For the hackathon weekend, the
-              deploy flow or the local run is the practical route.
+              deploying it on your own server with workerd is still marked coming soon.
             </p>
             <div className="mt-3 flex flex-wrap gap-4">
               <a className="text-sm font-medium text-primary underline" href="https://github.com/cloudflare/cloudflare-os" target="_blank" rel="noreferrer">
