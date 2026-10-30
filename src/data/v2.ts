@@ -116,6 +116,87 @@ export const judging = [
   { weight: "15%", title: "Pitch and experience", detail: "Can a stranger follow it in a few minutes, and is it pleasant to use?" },
 ];
 
+export const stackCards = [
+  {
+    title: "React + Vite",
+    role: "The frontend",
+    detail:
+      "The website or app people actually click through in your demo. Vite scaffolds a React + TypeScript project in one command, with a fast local dev server so you see changes instantly.",
+    command: "npm create vite@latest my-app -- --template react-ts",
+    link: null as string | null,
+    linkLabel: null as string | null,
+  },
+  {
+    title: "Cloudflare Agents SDK",
+    role: "The agent backend",
+    detail:
+      "Build stateful AI agents that run on Cloudflare Workers: they can hold a conversation, remember what happened, call tools, and wake up later to do work, backed by Durable Objects for memory.",
+    command: "npm create cloudflare@latest agents-starter -- --template cloudflare/agents-starter",
+    link: "https://developers.cloudflare.com/agents/getting-started/quick-start/",
+    linkLabel: "Agents SDK quickstart",
+  },
+  {
+    title: "Cloudflare Workers + open source",
+    role: "Where it runs",
+    detail:
+      "Workers runs your agent on Cloudflare's network, and the Agents SDK and starters are open source, so you can read the code, fork it, and learn from real examples instead of starting from a blank page.",
+    command: "npm i agents",
+    link: "https://developers.cloudflare.com/agents/getting-started/quick-start/",
+    linkLabel: "Agents docs",
+  },
+];
+
+export const setupSteps = [
+  {
+    title: "Get a laptop ready",
+    detail:
+      "Bring a laptop with Node.js installed (version 22 or later is what the Agents SDK guides ask for) and a free Cloudflare account. Mentors help with setup on Saturday if you get stuck.",
+  },
+  {
+    title: "Pick a coding agent",
+    detail:
+      "You do not need to hand-write all the code. Use an AI coding agent: FreeBuff, a free coding agent funded by ads, or OpenCode, an open-source terminal coding agent. Links to both are below.",
+  },
+  {
+    title: "Scaffold the frontend",
+    detail: "Ask your coding agent to create a React + Vite app, then describe the screens your demo needs: what the user sees, clicks, and gets back.",
+  },
+  {
+    title: "Add the agent backend",
+    detail:
+      "Ask your coding agent to add a Cloudflare agent from the agents-starter template, give it a job in plain words, and connect it to your frontend.",
+  },
+  {
+    title: "Run it, test it, demo it",
+    detail:
+      "Run the app locally, click through it yourself, fix what breaks with the agent's help, and demo the working version live on Sunday. A local demo is enough; deploying to Workers is a bonus, not a requirement.",
+  },
+];
+
+export const agentLinks = [
+  {
+    title: "FreeBuff — the free coding agent",
+    detail: "Free to use, funded by ads, with frontier coding models. No card, no credits to watch. Use the organizer's referral link.",
+    url: "https://freebuff.com/?ref=ref-9b801c68-ca4d-46d9-9ba7-e24d57883d64",
+    label: "Start with FreeBuff",
+  },
+  {
+    title: "OpenCode",
+    detail: "An open-source AI coding agent that runs in your terminal, desktop app, or editor, and works with many model providers.",
+    url: "https://opencode.ai/download",
+    label: "Download OpenCode",
+  },
+];
+
+export const examplePrompt = `Build a demo for the [track name] track.
+
+The sponsor's problem is: [paste the problem from Saturday's pitch].
+
+Build a React + Vite frontend and a Cloudflare agent backend.
+The demo should let a user [describe the one main action, e.g. "paste a deal summary and get a stakeholder map"].
+Keep it to one clear flow that works end to end, and show the result on screen.
+Tell me what you built, what to click first, and what is still fake or hardcoded.`;
+
 export const faqs = [
   {
     q: "Is this the same as Hack for Humanity?",

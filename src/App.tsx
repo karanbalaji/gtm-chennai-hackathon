@@ -3,10 +3,11 @@ import { Badge } from "./components/ui/badge";
 import { Button } from "./components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./components/ui/accordion";
-import { tracks, schedule, judging, faqs } from "./data/v2";
+import { tracks, schedule, judging, faqs, stackCards, setupSteps, examplePrompt, agentLinks } from "./data/v2";
 
 const nav = [
   { href: "#tracks", label: "Tracks" },
+  { href: "#tech-stack", label: "Tech stack" },
   { href: "#companies", label: "For companies" },
   { href: "#schedule", label: "Schedule" },
   { href: "#judging", label: "Judging" },
@@ -133,6 +134,69 @@ export default function App() {
                       ))}
                     </ul>
                   </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </Section>
+
+        <Section
+          id="tech-stack"
+          eyebrow="Tech stack"
+          title="You can build this by prompting. No coding experience required."
+          intro="This stack is promptable: describe what you want in plain words to a coding agent and it scaffolds the code for you. You still need to test it and demo it, and mentors are in the room to help. If you can describe the problem clearly, you can participate."
+        >
+          <div className="grid gap-5 md:grid-cols-3">
+            {stackCards.map((s) => (
+              <Card key={s.title} className="flex flex-col">
+                <CardHeader>
+                  <Badge variant="outline">{s.role}</Badge>
+                  <CardTitle className="mt-3 text-xl">{s.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-1 flex-col gap-4">
+                  <p className="text-sm leading-relaxed text-zinc-600">{s.detail}</p>
+                  <pre className="mt-auto overflow-x-auto rounded-lg bg-zinc-950 p-3 text-xs leading-relaxed text-zinc-100">{s.command}</pre>
+                  {s.link && s.linkLabel && (
+                    <a className="text-sm font-medium text-primary underline" href={s.link} target="_blank" rel="noreferrer">
+                      {s.linkLabel} →
+                    </a>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <h3 className="mt-12 text-xl font-bold">Basic setup, step by step</h3>
+          <ol className="mt-4 grid gap-4 md:grid-cols-2">
+            {setupSteps.map((st, i) => (
+              <li key={st.title} className="rounded-xl border bg-zinc-50 p-5">
+                <p className="text-sm font-bold text-primary">Step {i + 1}</p>
+                <p className="mt-1 font-semibold">{st.title}</p>
+                <p className="mt-1 text-sm leading-relaxed text-zinc-600">{st.detail}</p>
+              </li>
+            ))}
+          </ol>
+
+          <div className="mt-8 rounded-xl border bg-zinc-950 p-5 text-white">
+            <p className="font-semibold">A prompt you can start from</p>
+            <p className="mt-1 text-sm text-zinc-400">Paste this into your coding agent on Saturday, fill in the brackets, and iterate from there.</p>
+            <pre className="mt-4 overflow-x-auto whitespace-pre-wrap text-sm leading-relaxed text-zinc-100">{examplePrompt}</pre>
+          </div>
+
+          <h3 className="mt-12 text-xl font-bold">Don't have a coding agent yet? Start here.</h3>
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            {agentLinks.map((a) => (
+              <Card key={a.title}>
+                <CardHeader>
+                  <CardTitle className="text-lg">{a.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-sm leading-relaxed text-zinc-600">{a.detail}</p>
+                  <Button className="bg-orange-600 hover:bg-orange-700" asChild>
+                    <a href={a.url} target="_blank" rel="noreferrer">
+                      {a.label} →
+                    </a>
+                  </Button>
                 </CardContent>
               </Card>
             ))}
