@@ -3,7 +3,7 @@ import { Badge } from "./components/ui/badge";
 import { Button } from "./components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./components/ui/accordion";
-import { tracks, schedule, judging, faqs, stackCards, setupSteps, examplePrompt, agentLinks } from "./data/v2";
+import { tracks, schedule, judging, faqs, stackCards, setupSteps, examplePrompt } from "./data/v2";
 
 const nav = [
   { href: "#tracks", label: "Tracks" },
@@ -165,8 +165,8 @@ export default function App() {
               </li>
               <li>
                 <strong>3. Inside FreeBuff, paste this prompt:</strong>
-                <pre className="mt-2 overflow-x-auto whitespace-pre-wrap rounded-lg bg-zinc-950 p-3 text-xs leading-relaxed text-zinc-100">{`Install the Cloudflare CLI (wrangler) and help me log in to my Cloudflare account.`}</pre>
-                <span className="text-zinc-600">FreeBuff will run the login step and your browser will ask you to authorize it. That is normal: it is how the Cloudflare CLI connects to your account. Once it says you are logged in, you are set.</span>
+                <pre className="mt-2 overflow-x-auto whitespace-pre-wrap rounded-lg bg-zinc-950 p-3 text-xs leading-relaxed text-zinc-100">{`Install the Cloudflare CLI and help me log in to my Cloudflare account.`}</pre>
+                <span className="text-zinc-600">FreeBuff will run the login step and your browser will ask you to authorize it. That is normal: it is how the Cloudflare CLI connects to your account. Ask for the new Cloudflare CLI (cf) specifically, not the older Wrangler tool: cf covers far more of Cloudflare. Once it says you are logged in, you are set.</span>
               </li>
               <li>
                 <strong>4. Then describe your build.</strong> Paste your track's sponsor problem and the starter prompt
@@ -232,6 +232,16 @@ pnpm run-local`}</pre>
                 Read the announcement →
               </a>
             </div>
+            <h4 className="mt-6 font-semibold">Also advanced: OpenCode</h4>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-700">
+              OpenCode is an open-source coding agent that runs in your terminal, desktop app, or editor. It belongs
+              here, not on the beginner path, because you set it up yourself and connect a model provider of your
+              choice, rather than opening a free agent that just works. If you are comfortable in a terminal, it is a
+              strong option.
+            </p>
+            <a className="mt-2 inline-block text-sm font-medium text-primary underline" href="https://opencode.ai/download" target="_blank" rel="noreferrer">
+              Download OpenCode →
+            </a>
           </div>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
@@ -271,24 +281,6 @@ pnpm run-local`}</pre>
             <pre className="mt-4 overflow-x-auto whitespace-pre-wrap text-sm leading-relaxed text-zinc-100">{examplePrompt}</pre>
           </div>
 
-          <h3 className="mt-12 text-xl font-bold">Don't have a coding agent yet? Start here.</h3>
-          <div className="mt-4 grid gap-4 md:grid-cols-2">
-            {agentLinks.map((a) => (
-              <Card key={a.title}>
-                <CardHeader>
-                  <CardTitle className="text-lg">{a.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <p className="text-sm leading-relaxed text-zinc-600">{a.detail}</p>
-                  <Button className="bg-orange-600 hover:bg-orange-700" asChild>
-                    <a href={a.url} target="_blank" rel="noreferrer">
-                      {a.label} →
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </Section>
 
         <section id="companies" className="bg-orange-50/60">

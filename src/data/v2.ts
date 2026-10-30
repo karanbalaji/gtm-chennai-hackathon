@@ -155,7 +155,7 @@ export const setupSteps = [
   {
     title: "Pick a coding agent",
     detail:
-      "You do not need to hand-write all the code. Use an AI coding agent: FreeBuff, a free coding agent funded by ads, or OpenCode, an open-source terminal coding agent. Links to both are below.",
+      "You do not need to hand-write all the code. Start with FreeBuff, a free coding agent funded by ads, if you are new. OpenCode, an open-source terminal coding agent, is listed under the advanced options below.",
   },
   {
     title: "Scaffold the frontend",
@@ -170,21 +170,6 @@ export const setupSteps = [
     title: "Run it, test it, demo it",
     detail:
       "Run the app locally, click through it yourself, fix what breaks with the agent's help, and demo the working version live on Sunday. A local demo is enough; deploying to Workers is a bonus, not a requirement.",
-  },
-];
-
-export const agentLinks = [
-  {
-    title: "FreeBuff — the free coding agent",
-    detail: "Free to use, funded by ads, with frontier coding models. No card, no credits to watch. Use the organizer's referral link.",
-    url: "https://freebuff.com/?ref=ref-9b801c68-ca4d-46d9-9ba7-e24d57883d64",
-    label: "Start with FreeBuff",
-  },
-  {
-    title: "OpenCode",
-    detail: "An open-source AI coding agent that runs in your terminal, desktop app, or editor, and works with many model providers.",
-    url: "https://opencode.ai/download",
-    label: "Download OpenCode",
   },
 ];
 
